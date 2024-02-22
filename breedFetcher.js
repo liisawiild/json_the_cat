@@ -1,5 +1,4 @@
 const request = require('request');
-const { breedName } = require('./index');
 
 
 const fetchBreedDescription = function(breedName, callback) {
@@ -8,7 +7,8 @@ const fetchBreedDescription = function(breedName, callback) {
     if (error) {
       callback(error, null);
     } else if (body.length === 2) {
-      console.log("Breed not found.");
+      let error = "Breed not found.";
+      callback(error, null);
     } else if (body.length > 2) {
       let data = JSON.parse(body);
       let breedDescription = data[0]["description"];
@@ -18,3 +18,4 @@ const fetchBreedDescription = function(breedName, callback) {
 };
 
 module.exports = { fetchBreedDescription };
+
