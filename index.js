@@ -1,4 +1,5 @@
 const { fetchBreedDescription } = require('./breedFetcher');
+// console.log(fetchBreedDescription);
 
 const breedName = process.argv[2];
 
@@ -10,4 +11,3 @@ fetchBreedDescription(breedName, (error, breedDescription) => {
   }
 });
 
-module.exports = { breedName };
